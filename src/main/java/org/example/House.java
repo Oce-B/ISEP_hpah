@@ -8,7 +8,7 @@ public class House {
     private String potionBonus;
     private String accuracyBonus;
 
-    private String test;
+
 
 
 }
