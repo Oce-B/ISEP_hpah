@@ -3,7 +3,9 @@ package org.example;
 import java.util.List;
 
 public class Wizard extends Character{
-
+    public void attack(){
+        return;
+    };
     private int level;
     private int experience;
     private Pet pet;
@@ -18,5 +20,5 @@ public class Wizard extends Character{
     }
 
 
-    new
+
 }
