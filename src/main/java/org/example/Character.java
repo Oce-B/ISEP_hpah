@@ -2,6 +2,7 @@ package org.example;
 
 public abstract class Character {
 
+    private int level;
     private String characterName;
     private int healthPoints;
     private int maxHealthPoints;
@@ -24,6 +25,10 @@ public abstract class Character {
 
 }
     public abstract String attack(Character target, Spell spellUsed);
+
+    public boolean isDead(){
+        return (this.healthPoints <= 0);
+    }
 
 
 //Setters and getters
@@ -88,5 +93,14 @@ public abstract class Character {
 
     public int getMaxManaPoints() {
         return maxManaPoints;
+    }
+
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 }

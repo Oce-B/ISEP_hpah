@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 
 public class Wizard extends Character{
 
-    private int level;
+
     private int experience;
     private Pet pet;
     private Wand wand;
@@ -24,7 +24,7 @@ public class Wizard extends Character{
         this.setCharacterName(scanner.next());
 
 
-        this.level=0;
+        this.setLevel(1);
         this.experience=0;
     }
 
@@ -38,7 +38,7 @@ public class Wizard extends Character{
 
                 //Inspired by Pokemon attack formula
         if (this.getAccuracy() >= luck) {
-            targetHp -= (((2*this.level/5+2)*this.getAttackPoints()* spellUsed.getSpellLevel())/target.getDefense()/50+2)/255 ;
+            targetHp -= (((2*this.getLevel()/5+2)*this.getAttackPoints()* spellUsed.getSpellLevel())/target.getDefense()/50+2)/255 ;
              attackMessage = this.getCharacterName() + " dealt " + " damage to " + target.getCharacterName() + "!";
 
         } else if (this.getAccuracy() < luck) {
@@ -51,8 +51,9 @@ public class Wizard extends Character{
 
     };
 
-
-
+    public List<Spell> getKnownSpells() {
+        return knownSpells;
+    }
 
     public void defend(){
     }
