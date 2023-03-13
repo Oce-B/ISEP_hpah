@@ -2,12 +2,91 @@ package org.example;
 
 public abstract class Character {
 
-    private String name;
+    private String characterName;
     private int healthPoints;
     private int maxHealthPoints;
-
     private int maxManaPoints;
     private int manaPoints;
     private double accuracy;
-    public abstract void attack(Character);
+    private int attackPoints;
+    private int defense;
+
+    public Character(String characterName, int healthPoints, int maxHealthPoints, int manaPoints, int accuracy, int attackPoints, int defense){
+        this.characterName=characterName;
+        this.healthPoints=healthPoints;
+        this.maxHealthPoints=maxHealthPoints;
+        this.maxManaPoints=manaPoints;
+        this.manaPoints=manaPoints;
+        this.accuracy=accuracy;
+        this.attackPoints=attackPoints;
+        this.defense=defense;
+
+
+}
+    public abstract String attack(Character target, Spell spellUsed);
+
+
+//Setters and getters
+
+
+    public int getAttackPoints() {
+        return attackPoints;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public void setCharacterName(String characterName){
+        this.characterName = characterName;
+    }
+
+    public String getCharacterName() {
+        return characterName;
+    }
+
+    public void setAccuracy(double accuracy) {
+        this.accuracy = accuracy;
+    }
+
+
+    public void setHealthPoints(int healthPoints) {
+        this.healthPoints = healthPoints;
+    }
+
+    public void setManaPoints(int manaPoints) {
+        this.manaPoints = manaPoints;
+    }
+
+    public void setMaxHealthPoints(int maxHealthPoints) {
+        this.maxHealthPoints = maxHealthPoints;
+    }
+
+    public void setMaxManaPoints(int maxManaPoints) {
+        this.maxManaPoints = maxManaPoints;
+    }
+
+    public double getAccuracy() {
+        return accuracy;
+    }
+
+    public int getHealthPoints() {
+        return this.healthPoints;
+    }
+
+    public int getManaPoints() {
+        return manaPoints;
+    }
+
+    public int getMaxHealthPoints() {
+        return maxHealthPoints;
+    }
+
+    public int getMaxManaPoints() {
+        return maxManaPoints;
+    }
 }
