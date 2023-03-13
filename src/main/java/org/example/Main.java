@@ -7,7 +7,7 @@ public class Main {
         System.out.println("Hello world!");
 
 
-        Wizard player = new Wizard("",0,1000,1,50,1,1,1,1);
+        Wizard player = new Wizard("",1000,1000,1,50,100,1,1,1);
         System.out.println( "hi "+ player.getCharacterName() + " !");
 
 
@@ -19,6 +19,7 @@ public class Main {
 
         Spell punching = new Spell();
         punching.setSpellName("punching");
+        punching.setSpellLevel(2);
         List<Spell> spellList = new ArrayList<>();
         spellList.add(punching);
         player.setKnownSpells(spellList);

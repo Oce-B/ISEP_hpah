@@ -31,17 +31,18 @@ public class Wizard extends Character{
     public String attack(Character target, Spell spellUsed){
         int luck= new Random().ints(0,100).findFirst().getAsInt();
         System.out.println("luck = "+luck);
-        System.out.println("accuracy = "+this.getAccuracy());
+        System.out.println("accuracy= "+this.getAccuracy());
 
         String attackMessage ="Placeholder or something :/";
         int targetHp= target.getHealthPoints();
 
                 //Inspired by Pokemon attack formula
         if (this.getAccuracy()*100 >= luck) {
-            targetHp-=targetHp;
-           // targetHp -= (((2*this.getLevel()/5+2)*this.getAttackPoints()* spellUsed.getSpellLevel())/target.getDefense()/50+2)/255 ;
-             attackMessage = this.getCharacterName() + " dealt " + " damage to " + target.getCharacterName() + "!";
+           int damage= (((2*this.getLevel()/5+2)*this.getAttackPoints()* spellUsed.getSpellLevel())/target.getDefense()/50+2)/255 ;
+           targetHp -= damage;
 
+             attackMessage = this.getCharacterName() + " dealt " + damage +" points of damage to " + target.getCharacterName() + "!";
+            target.setHealthPoints(targetHp);
         } else if (this.getAccuracy()*100 < luck) {
            attackMessage = this.getCharacterName()+ " has missed!! Haha you idiot :3";
 

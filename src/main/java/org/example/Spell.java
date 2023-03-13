@@ -19,6 +19,10 @@ public class Spell extends AbstractSpell{
         return spellLevel;
     }
 
+    public void setSpellLevel(int spellLevel) {
+        this.spellLevel = spellLevel;
+    }
+
     public int getManaCost() {
         return manaCost;
     }
