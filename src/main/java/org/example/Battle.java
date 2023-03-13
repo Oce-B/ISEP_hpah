@@ -48,20 +48,23 @@ public class Battle {
             switch (command) {
                 case "attack":
                     wizard.attack(enemies.get(0), new Spell());
-                    break test ;
+                    System.out.println("That hurt!");
+                   break test;
                 case "spell":
                     displaySpells();
                     System.out.print("Enter spell index: ");
                     int spellIndex = scanner.nextInt();
                     scanner.nextLine(); // consume newline
                     Spell spell = wizard.getKnownSpells().get(spellIndex);
-                    wizard.attack(enemies.get(0), spell);
+                    System.out.println(wizard.attack(enemies.get(0), spell));
                     break test;
                 case "item":
                     // implement item usage logic here
+                    System.out.println("Try again next time!");
                     break test;
                 case "run":
                     // implement run logic here
+                    System.out.println("You can't run away from your spaghetti code!!!!");
                     break test;
                 default:
                     System.out.println("Invalid action!");
@@ -79,10 +82,11 @@ public class Battle {
 
         private boolean isCombatOver() {
             if (wizard.isDead()) {
-                System.out.println("is defeatec!");
+                System.out.println(wizard.getCharacterName() + " is defeated!");
                 return true;
             } else if (enemies.isEmpty() || enemies.stream().allMatch(Character::isDead)) {
                 System.out.println("Enemies defeated!");
+                System.out.println(wizard.getCharacterName()+" won the battle!");
                 return true;
             } else {
                 return false;
