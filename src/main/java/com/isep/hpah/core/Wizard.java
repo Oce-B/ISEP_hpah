@@ -1,9 +1,8 @@
-package org.example;
+package com.isep.hpah.core;
 
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.stream.IntStream;
 
 public class Wizard extends Character{
 

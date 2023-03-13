@@ -1,4 +1,4 @@
-package org.example;
+package com.isep.hpah.core;
 
 public class Potion {
     public int potionLevel;

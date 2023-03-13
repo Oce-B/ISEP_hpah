@@ -1,4 +1,9 @@
-package org.example;
+package com.isep.hpah.logic;
+
+import com.isep.hpah.core.Character;
+import com.isep.hpah.core.Enemy;
+import com.isep.hpah.core.Spell;
+import com.isep.hpah.core.Wizard;
 
 import java.util.List;
 import java.util.Scanner;
@@ -91,6 +96,7 @@ public class Battle {
         private boolean isCombatOver() {
             if (wizard.isDead()) {
                 System.out.println(wizard.getCharacterName() + " is defeated!");
+                boolean gameOver=true;
                 return true;
             } else if (enemies.isEmpty() || enemies.stream().allMatch(Character::isDead)) {
                 System.out.println("Enemies defeated!");

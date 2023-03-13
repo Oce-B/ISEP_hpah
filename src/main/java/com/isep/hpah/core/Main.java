@@ -1,4 +1,6 @@
-package org.example;
+package com.isep.hpah.core;
+import com.isep.hpah.logic.Battle;
+
 import java.util.ArrayList;
 import java.util.List;
 

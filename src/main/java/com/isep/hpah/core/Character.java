@@ -1,4 +1,4 @@
-package org.example;
+package com.isep.hpah.core;
 
 public abstract class Character {
 
