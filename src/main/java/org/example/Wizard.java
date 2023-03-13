@@ -22,8 +22,6 @@ public class Wizard extends Character{
         Scanner scanner = new Scanner(System.in);
         System.out.println("Choose your wizard's name!");
         this.setCharacterName(scanner.next());
-
-
         this.setLevel(1);
         this.experience=0;
     }
@@ -47,12 +45,18 @@ public class Wizard extends Character{
         }
 
         return attackMessage;
-
-
     };
 
+    public String learnNewSpell(Spell newSpell){
+        knownSpells.add(newSpell);
+        return this.getCharacterName() + " has learned " + newSpell +" !";
+    }
     public List<Spell> getKnownSpells() {
         return knownSpells;
+    }
+
+    public void setKnownSpells(List<Spell> knownSpells) {
+        this.knownSpells = knownSpells;
     }
 
     public void defend(){

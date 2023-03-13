@@ -58,7 +58,7 @@ public abstract class Character {
         this.accuracy = accuracy;
     }
 
-
+//TODO make sure that maxHealthPoints is always superior to healthPoints
     public void setHealthPoints(int healthPoints) {
         this.healthPoints = healthPoints;
     }
