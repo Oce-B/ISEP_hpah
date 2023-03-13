@@ -46,9 +46,12 @@ public class Battle {
             String command = scanner.nextLine();
 
             switch (command) {
-                case "attack":
-                    wizard.attack(enemies.get(0), new Spell());
-                    System.out.println("That hurt!");
+                case "act":
+                    wizard.act();
+                    System.out.println("----------------------------------------------");
+                    System.out.println(wizard.getCharacterName()+" tried to do something.....");
+                    System.out.println("But nothing happened!");
+                    System.out.println("----------------------------------------------");
                    break test;
                 case "spell":
                     displaySpells();
@@ -56,18 +59,23 @@ public class Battle {
                     int spellIndex = scanner.nextInt();
                     scanner.nextLine(); // consume newline
                     Spell spell = wizard.getKnownSpells().get(spellIndex);
+
                     System.out.println(wizard.attack(enemies.get(0), spell));
+                    System.out.println("----------------------------------------------");
                     break test;
                 case "item":
                     // implement item usage logic here
                     System.out.println("Try again next time!");
+                    System.out.println("----------------------------------------------");
                     break test;
                 case "run":
                     // implement run logic here
                     System.out.println("You can't run away from your spaghetti code!!!!");
+                    System.out.println("----------------------------------------------");
                     break test;
                 default:
                     System.out.println("Invalid action!");
+                    System.out.println("----------------------------------------------");
                     break;
             }}
         }
@@ -98,6 +106,9 @@ public class Battle {
             System.out.println("vs.");
             for (Enemy enemy : enemies) {
                 System.out.println(enemy.getCharacterName() + " (Level " + enemy.getLevel() + ") " + enemy.getHealthPoints() + "/" + enemy.getMaxHealthPoints() + " HP");
+            }
+            if (wizard.getHealthPoints()<= wizard.getMaxHealthPoints()*0.1){
+                System.out.println("Be careful! You're almost out of life!");
             }
         }
 

@@ -36,20 +36,30 @@ public class Wizard extends Character{
         String attackMessage ="Placeholder or something :/";
         int targetHp= target.getHealthPoints();
 
-                //Inspired by Pokemon attack formula
         if (this.getAccuracy()*100 >= luck) {
-           int damage= (((2*this.getLevel()/5+2)*this.getAttackPoints()* spellUsed.getSpellLevel())/target.getDefense()/50+2)/255 ;
+           double damage = (this.getAttackPoints()-target.getDefense())*0.05;
+
+                //Inspired by Pokemon attack formula
+            // TODO find a better formula for damage
+         // double damage= (((2*this.getLevel()/5+2)*this.getAttackPoints()* spellUsed.getSpellLevel())/target.getDefense()/50+2)/255 ;
            targetHp -= damage;
 
              attackMessage = this.getCharacterName() + " dealt " + damage +" points of damage to " + target.getCharacterName() + "!";
             target.setHealthPoints(targetHp);
         } else if (this.getAccuracy()*100 < luck) {
-           attackMessage = this.getCharacterName()+ " has missed!! Haha you idiot :3";
+           attackMessage = this.getCharacterName()+ " has missed!!";
 
         }
 
         return attackMessage;
     };
+
+
+    //TODO create act method
+    //This method is inspired by undertale. It allows the user to win the battle with a specific action taht doesnt involve using spells....
+    public String act()
+    {return "";}
+
 
     public String learnNewSpell(Spell newSpell){
         knownSpells.add(newSpell);

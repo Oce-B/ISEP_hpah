@@ -7,11 +7,11 @@ public class Main {
         System.out.println("Hello world!");
 
 
-        Wizard player = new Wizard("",1000,1000,1,50,100,1,1,1);
+        Wizard player = new Wizard("",10,1000,1,50,100,1,1,1);
         System.out.println( "hi "+ player.getCharacterName() + " !");
 
 
-        Enemy badGuy = new Enemy("BadGuy",5,5,5,50,5,5);
+        Enemy badGuy = new Enemy("BadGuy",5,50,5,50,5,5);
         System.out.println("oh no, it's "+ badGuy.getCharacterName()+" !");
         List<Enemy> badGuys = new ArrayList<>();
         badGuys.add(badGuy);
