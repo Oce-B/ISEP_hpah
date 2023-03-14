@@ -16,6 +16,7 @@ public class GameLogic {
         }
     }
 
+
     public boolean isGameOver() {
 
         return gameOver;

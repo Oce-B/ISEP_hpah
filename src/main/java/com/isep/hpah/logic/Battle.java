@@ -125,5 +125,13 @@ public class Battle {
                 System.out.println(i + ": " + spell.getSpellName() + " (" + spell.getManaCost() + " MP)");
             }
         }
+
+    public Wizard getWizard() {
+        return wizard;
     }
+
+    public List<Enemy> getEnemies() {
+        return enemies;
+    }
+}
 

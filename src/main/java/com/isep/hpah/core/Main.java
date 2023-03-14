@@ -1,4 +1,5 @@
 package com.isep.hpah.core;
+import com.isep.hpah.logic.Experience;
 import com.isep.hpah.logic.Battle;
 
 import java.util.ArrayList;
@@ -28,6 +29,8 @@ public class Main {
 
         Battle battle = new Battle(player, badGuys );
         battle.start();
+
+        Experience.levelUp(player);
 
     }
 

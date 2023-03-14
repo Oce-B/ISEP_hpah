@@ -8,7 +8,9 @@ public class Wizard extends Character{
 
 
     private int experience;
+
     private Pet pet;
+
     private Wand wand;
     private House house;
     private List<Spell> knownSpells;
@@ -76,6 +78,12 @@ public class Wizard extends Character{
     }
 
 
+    public int getExperience() {
+        return experience;
+    }
 
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
 
 }
