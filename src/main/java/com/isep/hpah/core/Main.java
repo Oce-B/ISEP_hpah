@@ -13,7 +13,7 @@ public class Main {
         GameLogic game = new GameLogic();
         game.startGame();
 
-      /*  Enemy badGuy = new Enemy("BadGuy",5,50,5,50,5,5);
+        Enemy badGuy = new Enemy("BadGuy",5,50,5,50,5,5);
         System.out.println("oh no, it's "+ badGuy.getCharacterName()+" !");
         List<Enemy> badGuys = new ArrayList<>();
         badGuys.add(badGuy);
@@ -29,7 +29,7 @@ public class Main {
         Battle battle = new Battle(player, badGuys );
         battle.start();
 
-        Experience.levelUp(player);*/
+        Experience.levelUp(player);
 
     }
 
