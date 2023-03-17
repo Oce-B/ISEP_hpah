@@ -1,6 +1,8 @@
 package com.isep.hpah.core;
+import com.isep.hpah.Game.Game;
 import com.isep.hpah.logic.Experience;
 import com.isep.hpah.logic.Battle;
+import com.isep.hpah.logic.GameLogic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,15 +10,10 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        SortingHat sortingHat = new SortingHat();
+        GameLogic game = new GameLogic();
+        game.startGame();
 
-        Wizard player = new Wizard("",10,1000,1,50,100,1,1,1);
-        System.out.println( "hi "+ player.getCharacterName() + " !!!");
-
-        sortingHat.chooseHouse(player);
-        System.out.println();
-/*
-        Enemy badGuy = new Enemy("BadGuy",5,50,5,50,5,5);
+      /*  Enemy badGuy = new Enemy("BadGuy",5,50,5,50,5,5);
         System.out.println("oh no, it's "+ badGuy.getCharacterName()+" !");
         List<Enemy> badGuys = new ArrayList<>();
         badGuys.add(badGuy);
@@ -32,8 +29,8 @@ public class Main {
         Battle battle = new Battle(player, badGuys );
         battle.start();
 
-        Experience.levelUp(player);
-*/
+        Experience.levelUp(player);*/
+
     }
 
 

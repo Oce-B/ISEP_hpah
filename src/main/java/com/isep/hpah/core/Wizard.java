@@ -21,9 +21,7 @@ public class Wizard extends Character{
 
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Choose your wizard's name!");
         this.setCharacterName(scanner.next());
-        this.setLevel(1);
         this.experience=0;
     }
 
@@ -47,7 +45,7 @@ public class Wizard extends Character{
 
              attackMessage = this.getCharacterName() + " dealt " + damage +" points of damage to " + target.getCharacterName() + "!";
             target.setHealthPoints(targetHp);
-        } else if (this.getAccuracy()*100 < luck) {
+        } else  {
            attackMessage = this.getCharacterName()+ " has missed!!";
 
         }
@@ -57,7 +55,7 @@ public class Wizard extends Character{
 
 
     //TODO create act method
-    //This method is inspired by undertale. It allows the user to win the battle with a specific action taht doesnt involve using spells....
+    //This method is inspired by undertale. It allows the user to win the battle with a specific action that doesn't involve using spells....
     public String act()
     {return "";}
 
@@ -88,5 +86,9 @@ public class Wizard extends Character{
 
     public void setHouse(House house) {
         this.house = house;
+    }
+
+    public House getHouse() {
+        return house;
     }
 }

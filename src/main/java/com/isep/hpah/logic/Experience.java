@@ -12,7 +12,7 @@ public class Experience {
     int experienceToNextLevel ; //+= experienceToNextLevel*0.1;
     public static void levelUp(Wizard wizard){
         Scanner scanner = new Scanner(System.in);
-        if (wizard.getLevel()<=100){
+        if (wizard.getLevel()<100){
             wizard.setLevel(wizard.getLevel()+1);
             wizard.setExperience(0);
             System.out.println("-------------------------");
@@ -23,7 +23,37 @@ public class Experience {
             displaySkills(wizard);
             System.out.print("Please choose a skill to improve");
             int skillIndex = scanner.nextInt();
-            scanner.nextLine(); // consume newline
+           switch (skillIndex){
+               case (0): //HealthPoints
+                   System.out.println("HP UP!");
+
+                   int newHp= wizard.getMaxHealthPoints() + 15 ;
+
+                   wizard.setMaxHealthPoints(newHp);
+                   System.out.println(wizard.getMaxHealthPoints());
+                   break;
+
+               case (1):
+                   System.out.println("MANA UP!");
+                   int newMana= wizard.getMaxManaPoints() + 15 ;
+                   wizard.setMaxManaPoints(newMana);
+
+                   System.out.println(wizard.getMaxManaPoints());
+                    break;
+
+               case(2):
+                   System.out.println("Attack  UP!");
+
+
+                   break;
+
+               case(3):
+                   System.out.println("Defense UP!");
+
+                   break;
+
+
+           }
 
        //TODO Allow user to improve skills (make sure to use House related bonusses)
 

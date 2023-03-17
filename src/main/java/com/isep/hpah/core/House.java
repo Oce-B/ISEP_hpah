@@ -18,5 +18,21 @@ public class House {
     public String getHouseName() {
         return houseName;
     }
+
+    public double getAccuracyBonus() {
+        return accuracyBonus;
+    }
+
+    public double getAttackBonus() {
+        return attackBonus;
+    }
+
+    public double getDefenseBonus() {
+        return defenseBonus;
+    }
+
+    public double getPotionBonus() {
+        return potionBonus;
+    }
 }
 
