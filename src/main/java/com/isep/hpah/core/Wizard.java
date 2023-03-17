@@ -86,4 +86,7 @@ public class Wizard extends Character{
         this.experience = experience;
     }
 
+    public void setHouse(House house) {
+        this.house = house;
+    }
 }

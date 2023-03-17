@@ -15,9 +15,8 @@ public class House {
         this.accuracyBonus = accuracyBonus;
     }
 
-    House Griffindor = new House("Griffindor", 2, 1, 1, 1);
-    House Hufflepuff = new House("Hufflepuff", 1, 1, 2, 1);
-    House Slytherin = new House("Slytherin", 1, 2, 1, 1);
-    House Ravenclaw = new House("Ravenclaw", 1, 1, 1, 2);
+    public String getHouseName() {
+        return houseName;
+    }
 }
 

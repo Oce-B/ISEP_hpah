@@ -25,7 +25,7 @@ public class Experience {
             int skillIndex = scanner.nextInt();
             scanner.nextLine(); // consume newline
 
-       //TODO Allow user to improve skills (make sure to use House related bonusses
+       //TODO Allow user to improve skills (make sure to use House related bonusses)
 
             System.out.println("-------------------------");
         }

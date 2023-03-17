@@ -7,13 +7,15 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
 
+        SortingHat sortingHat = new SortingHat();
 
         Wizard player = new Wizard("",10,1000,1,50,100,1,1,1);
         System.out.println( "hi "+ player.getCharacterName() + " !");
 
-
+        sortingHat.chooseHouse(player);
+        System.out.println();
+/*
         Enemy badGuy = new Enemy("BadGuy",5,50,5,50,5,5);
         System.out.println("oh no, it's "+ badGuy.getCharacterName()+" !");
         List<Enemy> badGuys = new ArrayList<>();
@@ -31,7 +33,7 @@ public class Main {
         battle.start();
 
         Experience.levelUp(player);
-
+*/
     }
 
 

@@ -9,6 +9,11 @@ public class GameLogic {
         gameOver = false;
     }
 
+    public void startGame(){
+        System.out.println("Welcome to ! Please enter your name?");
+
+    }
+
     public void nextStage() {
         currentStage++;
         if (currentStage > 7) {
