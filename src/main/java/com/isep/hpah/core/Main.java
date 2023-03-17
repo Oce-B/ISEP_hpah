@@ -11,7 +11,7 @@ public class Main {
         SortingHat sortingHat = new SortingHat();
 
         Wizard player = new Wizard("",10,1000,1,50,100,1,1,1);
-        System.out.println( "hi "+ player.getCharacterName() + " !");
+        System.out.println( "hi "+ player.getCharacterName() + " !!!");
 
         sortingHat.chooseHouse(player);
         System.out.println();
