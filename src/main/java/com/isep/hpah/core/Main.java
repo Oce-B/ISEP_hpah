@@ -1,8 +1,9 @@
 package com.isep.hpah.core;
-import com.isep.hpah.Game.Game;
+import com.isep.hpah.logic.Display;
 import com.isep.hpah.logic.Experience;
 import com.isep.hpah.logic.Battle;
-import com.isep.hpah.logic.GameLogic;
+import com.isep.hpah.Game.GameLogic;
+import com.isep.hpah.logic.Map;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,26 +11,18 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        GameLogic game = new GameLogic();
-        game.startGame();
+    Map map= new Map();
+        Display disp= new Display() ;
 
-        Enemy badGuy = new Enemy("BadGuy",5,50,5,50,5,5);
-        System.out.println("oh no, it's "+ badGuy.getCharacterName()+" !");
-        List<Enemy> badGuys = new ArrayList<>();
-        badGuys.add(badGuy);
+        GameLogic game= new GameLogic();
+
+       Wizard player= game.startGame();
 
 
-        Spell punching = new Spell();
-        punching.setSpellName("punching");
-        punching.setSpellLevel(2);
-        List<Spell> spellList = new ArrayList<>();
-        spellList.add(punching);
-        player.setKnownSpells(spellList);
 
-        Battle battle = new Battle(player, badGuys );
-        battle.start();
+        disp.printMap(map);
 
-        Experience.levelUp(player);
+
 
     }
 

@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Wizard extends Character{
 
-
+    int [] position = new int[2];
     private int experience;
 
     private Pet pet;
@@ -35,11 +35,11 @@ public class Wizard extends Character{
         String attackMessage ="Placeholder or something :/";
         int targetHp= target.getHealthPoints();
 
-        if (this.getAccuracy()*100 >= luck) {
+        if (this.getAccuracy()*100 < luck) {
            double damage = (this.getAttackPoints()-target.getDefense())*0.05;
 
                 //Inspired by Pokemon attack formula
-            // TODO find a better formula for damage
+            // TODO (oceane) find a better formula for damage
          // double damage= (((2*this.getLevel()/5+2)*this.getAttackPoints()* spellUsed.getSpellLevel())/target.getDefense()/50+2)/255 ;
            targetHp -= damage;
 
@@ -54,10 +54,11 @@ public class Wizard extends Character{
     };
 
 
-    //TODO create act method
-    //This method is inspired by undertale. It allows the user to win the battle with a specific action that doesn't involve using spells....
+    //TODO (oceane) create act method
     public String act()
     {return "";}
+
+    public void callPet(){}
 
 
     public String learnNewSpell(Spell newSpell){
@@ -75,6 +76,13 @@ public class Wizard extends Character{
     public void defend(){
     }
 
+    public void setPosition(int[] position) {
+        this.position = position;
+    }
+
+    public int[] getPosition() {
+        return position;
+    }
 
     public int getExperience() {
         return experience;
@@ -91,4 +99,6 @@ public class Wizard extends Character{
     public House getHouse() {
         return house;
     }
+
+
 }
