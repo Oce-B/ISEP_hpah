@@ -1,6 +1,6 @@
 package com.isep.hpah.core.console;
 
-import com.isep.hpah.gameMecanics.Map;
+import com.isep.hpah.core.Map.Map;
 
 public class Display {
 

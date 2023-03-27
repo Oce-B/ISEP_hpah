@@ -1,4 +1,4 @@
-package com.isep.hpah.gameMecanics;
+package com.isep.hpah.core.Map;
 
 public class Map {
 
@@ -21,7 +21,7 @@ public class Map {
                 if(squareColor == 0){
                     System.out.print("| ");
                 } else {
-                    System.out.printf("|%s", "b");
+                    System.out.printf("|%s", Symbol.getSymbol(squareColor).symbol);
                 }
             }
             System.out.println("|");
@@ -35,6 +35,20 @@ public class Map {
             return true;
         }
     }
+
+    public boolean clearSquare(int row, int column) {
+        if (map[row][column] == 0) {
+            return true;
+        } else {
+            map[row][column] = 0;
+            return false;
+        }
+    }
+
+
+
+
+
     public static int getSquare(int row, int column) {
         return map[row][column];
     }

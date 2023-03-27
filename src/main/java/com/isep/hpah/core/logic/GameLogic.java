@@ -64,7 +64,7 @@ public class GameLogic {
     public static void gameLoop() {
         while (isRunning) {
 
-            if (scanner.next().equals("m")) {
+            if (scanner.next().equals("menu")) {
                 printMenu();
                 int input = readInt("->", 3);
                 if (input == 1) {
