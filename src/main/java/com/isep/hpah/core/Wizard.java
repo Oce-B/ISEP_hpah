@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Wizard extends Character{
 
-    int [] position = new int[2];
+    int[] position = new int[2];
     private int experience;
 
     private Pet pet;
@@ -76,8 +76,9 @@ public class Wizard extends Character{
     public void defend(){
     }
 
-    public void setPosition(int[] position) {
-        this.position = position;
+    public void setPosition( int row, int column) {
+        int[] Position = {row, column};
+        this.position = Position;
     }
 
     public int[] getPosition() {

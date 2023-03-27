@@ -1,6 +1,5 @@
-package com.isep.hpah.logic;
+package com.isep.hpah.gameMecanics;
 
-import com.isep.hpah.core.Spell;
 import com.isep.hpah.core.Wizard;
 
 import java.util.Arrays;

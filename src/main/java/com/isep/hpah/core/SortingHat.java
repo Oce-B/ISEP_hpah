@@ -20,9 +20,8 @@ public class SortingHat {
     public void chooseHouse(Wizard wizard ){
         Random rand = new Random();
 
-        House test = houses.get(rand.nextInt(houses.size()));
-        System.out.println(test.getHouseName());
-        wizard.setHouse(test);
+        House givenHouse = houses.get(rand.nextInt(houses.size()));
+        wizard.setHouse(givenHouse);
     }
 }
 

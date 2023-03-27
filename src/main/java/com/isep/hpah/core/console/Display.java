@@ -1,6 +1,6 @@
-package com.isep.hpah.logic;
+package com.isep.hpah.core.console;
 
-import com.isep.hpah.core.Wizard;
+import com.isep.hpah.gameMecanics.Map;
 
 public class Display {
 

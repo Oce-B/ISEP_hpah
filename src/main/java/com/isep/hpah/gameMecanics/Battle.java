@@ -1,4 +1,4 @@
-package com.isep.hpah.logic;
+package com.isep.hpah.gameMecanics;
 
 import com.isep.hpah.core.Character;
 import com.isep.hpah.core.Enemy;
@@ -37,7 +37,7 @@ public class Battle {
 
         private void wizardTurn() {
 
-            //TODO: loop in case of a an invalid command
+            //TODO (oceane): loop in case of a an invalid command
 
 
             System.out.println(wizard.getCharacterName()+  " 's turn!");
@@ -53,10 +53,10 @@ public class Battle {
             switch (command) {
                 case "act":
                     wizard.act();
-                    System.out.println("----------------------------------------------");
+                   /* System.out.println("----------------------------------------------");
                     System.out.println(wizard.getCharacterName()+" tried to do something.....");
                     System.out.println("But nothing happened!");
-                    System.out.println("----------------------------------------------");
+                    System.out.println("----------------------------------------------");*/
                    break test;
                 case "spell":
                     displaySpells();
@@ -68,13 +68,13 @@ public class Battle {
                     System.out.println(wizard.attack(enemies.get(0), spell));
                     System.out.println("----------------------------------------------");
                     break test;
-                case "item":
-                    // implement item usage logic here
+                case "potion":
+                   //potion logic
                     System.out.println("Try again next time!");
                     System.out.println("----------------------------------------------");
                     break test;
                 case "run":
-                    // implement run logic here
+                    // run logic
                     System.out.println("You can't run away from your spaghetti code!!!!");
                     System.out.println("----------------------------------------------");
                     break test;
