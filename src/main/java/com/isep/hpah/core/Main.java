@@ -3,7 +3,9 @@ import com.isep.hpah.Game.Game;
 import com.isep.hpah.core.Map.Map;
 
 import static com.isep.hpah.core.Map.Movement.movePlayer;
+import static com.isep.hpah.core.Map.Movement.visuallyMovePlayer;
 import static com.isep.hpah.core.logic.GameLogic.gameLoop;
+import static com.isep.hpah.core.logic.GameLogic.getTextInput;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,13 +23,17 @@ Wizard wizard = game.startGame();
 
         map.fillSquare(wizard.getPosition()[0],wizard.getPosition()[1],1);
         map.printBoard(map);
-        System.out.println("                             ");
-        map.clearSquare(wizard.getPosition()[0],wizard.getPosition()[1]);
-        movePlayer(wizard, map, "right");
-        map.fillSquare(wizard.getPosition()[0],wizard.getPosition()[1],1);
+        while (true) {
+            visuallyMovePlayer(map, wizard);
+            /*System.out.println("                             ");
+            map.clearSquare(wizard.getPosition()[0], wizard.getPosition()[1]);
+            String direction = getTextInput();
+            movePlayer(wizard, map, direction);
+            map.fillSquare(wizard.getPosition()[0], wizard.getPosition()[1], 1);
 
-        map.printBoard(map);
-        System.out.println(wizard.getPosition()[0]);
+            map.printBoard(map);
+            System.out.println(wizard.getPosition()[0]);*/
+        }
     }
 
 

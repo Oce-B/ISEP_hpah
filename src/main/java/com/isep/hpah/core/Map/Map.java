@@ -4,6 +4,13 @@ public class Map {
 
     private static int[][] map;
 
+    private int[] combatCase;
+    private int[] petCase;
+    private int[] bossFightCase;
+
+    private int[] shopCase;
+
+
 
 
     public static final int MAP_SIZE = 5;

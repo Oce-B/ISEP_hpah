@@ -8,6 +8,7 @@ import java.lang.reflect.Array;
 import java.util.List;
 
 import static com.isep.hpah.core.Map.Map.MAP_SIZE;
+import static com.isep.hpah.core.logic.GameLogic.getTextInput;
 
 public class Movement {
     private Map map;
@@ -21,17 +22,12 @@ public class Movement {
             case ("down") -> {
                 if (checkMovement(player,0,1)) {
                     player.setPosition(Position[0] + 1, Position[1]);
-                    System.out.println("ok");
-                } else {
-                    System.out.println("impossible movement");
+
                 }
             }
             case ("up") -> {
                 if (checkMovement(player,0 , -1)) {
                     player.setPosition(Position[0] - 1, Position[1]);
-                    System.out.println("ok");
-                } else {
-                    System.out.println("impossible movement");
 
                 }
             }
@@ -39,19 +35,13 @@ public class Movement {
             case ("left") -> {
                 if (checkMovement(player, 1,-1)) {
                     player.setPosition(Position[0], Position[1]  - 1);
-                    System.out.println("ok");
-                } else {
-                    System.out.println("impossible movement");
 
-                }
-            }
+                } }
 
             case ("right") -> {
-                if (checkMovement(player,0,1)) {
+                if (checkMovement(player,1,1)) {
                     player.setPosition(Position[0], Position[1]  + 1);
-                    System.out.println("ok");
-                } else {
-                    System.out.println("impossible movement");
+
 
                 }
             }
@@ -64,14 +54,23 @@ public class Movement {
 
     }
     public static boolean checkMovement(Wizard player, int rowOrColumn /* 0 are row and 1 are column*/, int direction){
-        boolean movementPossible;
-        int max = MAP_SIZE;
 
-       return  (player.getPosition()[rowOrColumn]+ direction <= MAP_SIZE && player.getPosition()[rowOrColumn]+ direction >= 0);
+
+       return  (player.getPosition()[rowOrColumn]+ direction <= MAP_SIZE-1 && player.getPosition()[rowOrColumn]+ direction >= 0);
 
 
     }
 
+    public static void visuallyMovePlayer(Map map, Wizard wizard){
+        System.out.println("                             ");
+        map.printBoard(map);
+        map.clearSquare(wizard.getPosition()[0], wizard.getPosition()[1]);
+        String direction = getTextInput();
+        movePlayer(wizard, map, direction);
+        map.fillSquare(wizard.getPosition()[0], wizard.getPosition()[1], 1);
+        for (int i = 0; i < 50; ++i) System.out.println();
+
+    }
     public String getEncounter(Book book, int[] position){
 
         int row= position[0];

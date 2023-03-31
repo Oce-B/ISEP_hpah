@@ -16,14 +16,14 @@ public class GameLogic {
     static boolean isRunning=true;
     public Wizard player;
 
-    public String[] encounters = {"Battle", "Battle", "Nothing", "Nothing", "Inn", "Shop"} ;
+
     public Enemy[] enemies;
     public Boss[] bosses;
 
-
-    public void randomEncounters(){
+//Come on,  be serious
+   /* public void randomEncounters(){
         int encounter = (int) (Math.random()* encounters.length);
-    }
+    }*/
 
     public static String getTextInput() {
         String input;

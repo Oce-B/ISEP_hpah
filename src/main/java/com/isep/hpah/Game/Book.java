@@ -11,7 +11,7 @@ public class Book {
 
     private int currentBook;
     private String bookTitle;
-    final public String[] encounters = {"Battle", "Boss", "Nothing", "Shop", "Pet"} ;
+    final public String[] encounters = {"Battle", "Boss", "Shop", "Pet"} ;
     public Enemy[] enemies;
     public Boss[] bosses;
 

@@ -22,22 +22,23 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
         boolean nameSet;
         String Name;
+        nameSet= false;
         do {
-            nameSet = false;
+
             System.out.println("Choose your wizard's name!");
             Name = getTextInput();
             System.out.println("Your name is " + Name + " Is that correct?");
             System.out.println("1: Yes!");
             System.out.println("2: No that is not correct.");
-            int input = readInt(" -> ", 2);
-            if (input == 1) {
+            int numberInput = readInt(" -> ", 2);
+            if (numberInput == 1) {
                 nameSet = true;
             }
 
-        } while (!nameSet);
-
+        } while (nameSet==false);
+       String wizardName= Name;
        // Book.printIntro();
-        Wizard player = new Wizard(Name, 100, 100, 100, 50, 50, 1, 1, 1);
+        Wizard player = new Wizard(wizardName, 100, 100, 100, 50, 50, 1, 1, 1);
 
         SortingHat sortingHat = new SortingHat();
         sortingHat.chooseHouse(player);
