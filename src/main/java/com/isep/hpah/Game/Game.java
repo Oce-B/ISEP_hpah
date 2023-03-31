@@ -1,19 +1,22 @@
 package com.isep.hpah.Game;
 
+import com.isep.hpah.core.Core;
 import com.isep.hpah.core.SortingHat;
+import com.isep.hpah.core.Wand;
 import com.isep.hpah.core.Wizard;
 import  com.isep.hpah.core.logic.GameLogic;
 
+import java.util.Random;
 import java.util.Scanner;
 
 import static com.isep.hpah.core.logic.GameLogic.*;
 
 public class Game {
 
-
+private Book book;
     public Game() {
-        Book book = new Book();
-        book.setCurrentBook(1);
+         this.book = new Book();
+        this.book.setCurrentBook(1);
         isGameOver = false;
     }
 
@@ -47,25 +50,36 @@ public class Game {
 
 
             public Wizard startGame() {
-            String name = setWizardName();
-            Wizard player = new Wizard(name, 100, 100, 100, 50, 50, 1, 1, 1);
-                System.out.println("g");
+                Random rand= new Random();
+            Wizard player = new Wizard(setWizardName(), 100, 100, 100, 50, 50, 1, 1, 1);
+
             SortingHat sortingHat = new SortingHat();
             sortingHat.chooseHouse(player);
             System.out.println("Welcome to House " + player.getHouse().getHouseName() + " , " + player.getCharacterName() + " !");
-            player.setPosition(0, 0);
+            player.setPosition(4, 2);
+
+            Wand wand = new Wand();
+           /* Core core;
+            wand.setCore(core);*/
+            wand.setSize(rand.nextInt(10,33));
+
+            player.setWand(wand);
             return player;
 
             //Book.book1();
         }
 
 
-   /* public String gameLoop() {
+    /*public String gameLoop() {
 
         while (!this.isGameOver) {
         }
 
-        //return endMessage;
+        startGame();
+        for(int i = 1; i == 7; i++){
+            this.book.book+"i"();
+        }
+
 
         return "";
     }*/

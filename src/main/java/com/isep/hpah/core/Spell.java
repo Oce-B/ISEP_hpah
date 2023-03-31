@@ -1,9 +1,12 @@
 package com.isep.hpah.core;
 
+import java.util.List;
+
 public class Spell extends AbstractSpell{
 
 
    private int spellLevel;
+   private Wizard wizard;
 
     private int manaCost;
     public Spell(){
@@ -28,6 +31,8 @@ public class Spell extends AbstractSpell{
     public void setManaCost(int manaCost) {
         this.manaCost = manaCost;
     }
+
+
 
 
 }

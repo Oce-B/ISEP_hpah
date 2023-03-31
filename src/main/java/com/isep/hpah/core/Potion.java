@@ -1,10 +1,11 @@
 package com.isep.hpah.core;
 
 public class Potion {
-    public int potionLevel;
-    public String potionName;
-    
-    
+    private int potionLevel;
+    private int potionName;
+    private Wizard wizard;
+
+
     //Setters and getters
 
 
@@ -12,7 +13,5 @@ public class Potion {
         return potionLevel;
     }
 
-    public String getPotionName() {
-        return potionName;
-    }
+
 }

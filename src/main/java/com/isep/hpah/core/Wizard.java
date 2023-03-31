@@ -57,6 +57,27 @@ public class Wizard extends Character{
     public String act()
     {return "";}
 
+
+
+    public void displaySpells() {
+        List<Spell> spells = this.getKnownSpells();
+        for (int i = 0; i < spells.size(); i++) {
+            Spell spell = spells.get(i);
+            System.out.println(i + ": " + spell.getSpellName() + " (" + spell.getManaCost() + " MP)");
+        }
+    }
+
+
+    public void usePotion(Potion potion){
+        if (this.getHouse().getHouseName().equals("Hufflepuff")){
+
+        } else {
+
+
+        }
+    }
+
+
     public void callPet(){}
 
 
@@ -68,13 +89,31 @@ public class Wizard extends Character{
         return knownSpells;
     }
 
-    public void setKnownSpells(List<Spell> knownSpells) {
-        this.knownSpells = knownSpells;
-    }
+
 
     public void defend(){
     }
 
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
+
+    public Pet getPet() {
+        return pet;
+    }
+
+    public Wand getWand() {
+        return wand;
+    }
+
+    public void setWand(Wand wand) {
+        this.wand = wand;
+    }
+
+    public void setKnownSpells(List<Spell> knownSpells) {
+        this.knownSpells = knownSpells;
+    }
     public void setPosition( int row, int column) {
         int[] Position = {row, column};
         this.position = Position;
@@ -100,5 +139,11 @@ public class Wizard extends Character{
         return house;
     }
 
+    public List<Potion> getPotions() {
+        return potions;
+    }
 
+    public void setPotions(List<Potion> potions) {
+        this.potions = potions;
+    }
 }

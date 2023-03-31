@@ -46,9 +46,7 @@ public class Movement {
                 }
             }
 
-            default -> {
-                System.out.println("no direction chosen");
-            }
+
 
         }
 
@@ -68,9 +66,15 @@ public class Movement {
         String direction = getTextInput();
         movePlayer(wizard, map, direction);
         map.fillSquare(wizard.getPosition()[0], wizard.getPosition()[1], 1);
-
-
     }
 
+    public static void visuallyMove(Map map, Wizard wizard, String command){
+        System.out.println("                             ");
+        map.printBoard(map);
+        map.clearSquare(wizard.getPosition()[0], wizard.getPosition()[1]);
+
+        movePlayer(wizard, map, command);
+        map.fillSquare(wizard.getPosition()[0], wizard.getPosition()[1], 1);
+    }
 
 }

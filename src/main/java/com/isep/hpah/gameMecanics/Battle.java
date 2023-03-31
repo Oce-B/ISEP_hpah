@@ -8,6 +8,8 @@ import com.isep.hpah.core.Wizard;
 import java.util.List;
 import java.util.Scanner;
 
+import static com.isep.hpah.core.logic.GameLogic.*;
+
 public class Battle {
     //Inspired by a ChatGPT prompt
         private Wizard wizard;
@@ -46,32 +48,30 @@ public class Battle {
 
             test:
             while (true){
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Choose your action!: ");
-            String command = scanner.nextLine();
+
+            String command = getTextInput();
 
             switch (command) {
                 case "act":
                     wizard.act();
-                   /* System.out.println("----------------------------------------------");
-                    System.out.println(wizard.getCharacterName()+" tried to do something.....");
-                    System.out.println("But nothing happened!");
-                    System.out.println("----------------------------------------------");*/
+                   // TODO (oceane) add act (house specific actions....)
                    break test;
                 case "spell":
-                    displaySpells();
-                    System.out.print("Enter spell index: ");
-                    int spellIndex = scanner.nextInt();
-                    scanner.nextLine();
-                    Spell spell = wizard.getKnownSpells().get(spellIndex);
+                    wizard.displaySpells();
 
-                    System.out.println(wizard.attack(enemies.get(0), spell));
-                    System.out.println("----------------------------------------------");
+                    int spellIndex = readInt("Enter spell index: ", wizard.getKnownSpells().size() );
+
+                    Spell spell = wizard.getKnownSpells().get(spellIndex);
+/* TODO (oceane) Add a mean to choose a target */
+                    int target= 0;
+                    System.out.println(wizard.attack(enemies.get(target), spell));
+
                     break test;
+
                 case "potion":
-                   //potion logic
-                    System.out.println("Try again next time!");
-                    System.out.println("----------------------------------------------");
+                    displayList(wizard.getPotions());
+                    int potionIndex = readInt("Enter potion index: ", wizard.getPotions().size() );
+                    wizard.usePotion(wizard.getPotions().get(potionIndex));
                     break test;
                 case "run":
                     // run logic
@@ -118,13 +118,7 @@ public class Battle {
             }
         }
 
-        private void displaySpells() {
-            List<Spell> spells = wizard.getKnownSpells();
-            for (int i = 0; i < spells.size(); i++) {
-                Spell spell = spells.get(i);
-                System.out.println(i + ": " + spell.getSpellName() + " (" + spell.getManaCost() + " MP)");
-            }
-        }
+
 
     public Wizard getWizard() {
         return wizard;

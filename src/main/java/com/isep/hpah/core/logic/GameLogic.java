@@ -3,18 +3,22 @@ package com.isep.hpah.core.logic;
 import com.isep.hpah.Game.Book;
 import com.isep.hpah.core.Boss;
 import com.isep.hpah.core.Enemy;
+import com.isep.hpah.core.Map.Map;
+import com.isep.hpah.core.Spell;
 import com.isep.hpah.core.Wizard;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-import static com.isep.hpah.core.Map.Movement.movePlayer;
+import static com.isep.hpah.core.Map.Movement.*;
 
 public class GameLogic {
 
     public static boolean isGameOver;
     static Scanner scanner = new Scanner(System.in);
     static boolean isRunning=true;
-    public Wizard player;
+    public static Wizard player;
 
 
     public Enemy[] enemies;
@@ -52,7 +56,15 @@ public class GameLogic {
         player.setHealthPoints(player.getMaxHealthPoints());
     }
 
-    public static void characterInfo(){
+    public static void characterInfo(Wizard player){
+        System.out.println("Name" + player.getCharacterName());
+        System.out.println(player.getHealthPoints()+ " / "+ player.getMaxHealthPoints() +" HP");
+        System.out.println(player.getManaPoints()+ " / "+ player.getMaxManaPoints() +" MP");
+        System.out.println("Pet" + player.getPet());
+        System.out.println("Wand core" + player.getWand().getCore());
+        System.out.println("Wand size" + player.getWand().getSize());
+        System.out.println("Number of potions" + player.getPotions().size());
+
 
 
     }
@@ -63,24 +75,42 @@ public class GameLogic {
         System.out.println("3: Exit Game");
     }
 
+    public static void displayList(List list) {
+
+        for (int i = 0; i < list.size(); i++) {
+            Object item = list.get(i);
+            System.out.println(i + ": " + item+ list.get(i));
+        }
+    }
     static void anythingToContinue(){
         System.out.println("Enter anything to continue");
          scanner.next();
     }
-    public static void gameLoop() {
+    public static void gameLoop(Wizard player, Map map) {
+
+
+
         while (isRunning) {
-           // movePlayer(, map, scanner.next());
-            if (scanner.next().equals("menu")) {
+
+            String command = getTextInput();
+
+            if (command.equals("menu")) {
                 printMenu();
                 int input = readInt("->", 3);
                 if (input == 1) {
                     // continueJourney();
                 } else if (input == 2) {
-                    characterInfo();
+                    characterInfo(player);
                 } else {
                     isRunning = false;
-                    System.out.println("ok");
+                    break;
                 }
+            } else {
+
+                visuallyMove(map, player, command);
+                //movePlayer(player, map, command);
+
+
             }
         }
     }
