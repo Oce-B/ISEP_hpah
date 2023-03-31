@@ -82,10 +82,7 @@ public class GameLogic {
             System.out.println(i + ": " + item+ list.get(i));
         }
     }
-    static void anythingToContinue(){
-        System.out.println("Enter anything to continue");
-         scanner.next();
-    }
+
     public static void gameLoop(Wizard player, Map map) {
 
 
@@ -106,10 +103,7 @@ public class GameLogic {
                     break;
                 }
             } else {
-
-                visuallyMove(map, player, command);
-                //movePlayer(player, map, command);
-
+                visuallyMove(map, player,  command);
 
             }
         }
