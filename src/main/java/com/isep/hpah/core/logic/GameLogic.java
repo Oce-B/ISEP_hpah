@@ -31,6 +31,9 @@ public class GameLogic {
         return input;
     }
 
+    public static int nextInt(){
+        return scanner.nextInt();
+    }
     public static int readInt(String prompt, int userChoices) {
         int input;
         do {

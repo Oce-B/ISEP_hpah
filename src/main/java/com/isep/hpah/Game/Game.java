@@ -11,43 +11,53 @@ import static com.isep.hpah.core.logic.GameLogic.*;
 public class Game {
 
 
-
     public Game() {
         Book book = new Book();
         book.setCurrentBook(1);
         isGameOver = false;
     }
 
-    public Wizard startGame() {
-        Scanner scanner = new Scanner(System.in);
-        boolean nameSet;
-        String Name;
-        nameSet= false;
-        do {
 
-            System.out.println("Choose your wizard's name!");
-            Name = getTextInput();
-            System.out.println("Your name is " + Name + " Is that correct?");
-            System.out.println("1: Yes!");
-            System.out.println("2: No that is not correct.");
-            int numberInput = readInt(" -> ", 2);
-            if (numberInput == 1) {
-                nameSet = true;
-            }
 
-        } while (nameSet==false);
-       String wizardName= Name;
-       // Book.printIntro();
-        Wizard player = new Wizard(wizardName, 100, 100, 100, 50, 50, 1, 1, 1);
 
-        SortingHat sortingHat = new SortingHat();
-        sortingHat.chooseHouse(player);
-        System.out.println("Welcome to House " + player.getHouse().getHouseName() + " , " + player.getCharacterName() + " !");
-       player.setPosition(0,0);
-        return player;
+        public String setWizardName()
+        {
+            boolean nameSet=false;
+            String name ;
+            do {
+                System.out.print("Choose your wizard's name!");
+                name = getTextInput();
+                System.out.println("Your name is " + name + " Is that correct?");
+                System.out.println("1: Yes.");
+                System.out.print("2: No, I wish to change my name.");
 
-        //Book.book1();
-    }
+
+               if (readInt("--->",  2)==1){
+                   nameSet=true;
+                   return name;
+
+               }
+            }while (nameSet==false);
+            System.out.println("oooo");
+            return "";
+
+        }
+
+
+
+
+            public Wizard startGame() {
+            String name = setWizardName();
+            Wizard player = new Wizard(name, 100, 100, 100, 50, 50, 1, 1, 1);
+                System.out.println("g");
+            SortingHat sortingHat = new SortingHat();
+            sortingHat.chooseHouse(player);
+            System.out.println("Welcome to House " + player.getHouse().getHouseName() + " , " + player.getCharacterName() + " !");
+            player.setPosition(0, 0);
+            return player;
+
+            //Book.book1();
+        }
 
 
    /* public String gameLoop() {

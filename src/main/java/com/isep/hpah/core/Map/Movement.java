@@ -68,24 +68,9 @@ public class Movement {
         String direction = getTextInput();
         movePlayer(wizard, map, direction);
         map.fillSquare(wizard.getPosition()[0], wizard.getPosition()[1], 1);
-        for (int i = 0; i < 50; ++i) System.out.println();
-
-    }
-    public String getEncounter(Book book, int[] position){
-
-        int row= position[0];
-        int column=position[1];
-
-
-return "";
-
-    }
-
-    public void placeEncounter(String encounter, int[] position){
-        int row= position[0];
-        int column=position[1];
 
 
     }
+
 
 }

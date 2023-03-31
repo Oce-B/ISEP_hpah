@@ -17,11 +17,10 @@ public class Wizard extends Character{
     private List<Potion> potions;
 
     public Wizard(String characterName, int healthPoints, int maxHealthPoints, int manaPoints, int accuracy, int attackPoints, int defense, int level, int experience) {
-        super(characterName = "", healthPoints, maxHealthPoints, manaPoints, accuracy, attackPoints, defense);
+        super(characterName , healthPoints, maxHealthPoints, manaPoints, accuracy, attackPoints, defense);
 
 
-        Scanner scanner = new Scanner(System.in);
-        this.setCharacterName(scanner.next());
+
         this.experience=0;
     }
 
