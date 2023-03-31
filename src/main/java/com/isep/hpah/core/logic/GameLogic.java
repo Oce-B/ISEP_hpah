@@ -6,6 +6,9 @@ import com.isep.hpah.core.Enemy;
 import com.isep.hpah.core.Wizard;
 
 import java.util.Scanner;
+
+import static com.isep.hpah.core.Map.Movement.movePlayer;
+
 public class GameLogic {
 
     public static boolean isGameOver;
@@ -63,7 +66,7 @@ public class GameLogic {
     }
     public static void gameLoop() {
         while (isRunning) {
-
+           // movePlayer(, map, scanner.next());
             if (scanner.next().equals("menu")) {
                 printMenu();
                 int input = readInt("->", 3);

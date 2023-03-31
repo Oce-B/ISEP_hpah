@@ -3,7 +3,12 @@ package com.isep.hpah.core.Map;
 public class Map {
 
     private static int[][] map;
+
+
+
     public static final int MAP_SIZE = 5;
+
+
 
     public Map() {
         this.map = new int[MAP_SIZE][MAP_SIZE];

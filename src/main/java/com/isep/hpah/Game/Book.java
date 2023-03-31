@@ -11,7 +11,7 @@ public class Book {
 
     private int currentBook;
     private String bookTitle;
-    public String[] encounters = {"Battle", "Battle", "Nothing", "Nothing", "Inn", "Shop"} ;
+    final public String[] encounters = {"Battle", "Boss", "Nothing", "Shop", "Pet"} ;
     public Enemy[] enemies;
     public Boss[] bosses;
 
@@ -23,45 +23,68 @@ public class Book {
         }
     }
 
-   /* public void firstBook(){
+
+   public void defineEncounters(String encounter){
+        int book = this.getCurrentBook();
+        switch (encounter){
+            case "Battle":
+                break;
+
+            case "Inn":
+                break;
+
+            case "Boss":
+                break;
+
+            case "Shop":
+                break;
+
+            case "Nothing":
+                break;
+        }
+   }
+
+/*
+   public void book1(){
 
     enemies = {new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy()};
     bosses = {new Boss("Troll")};
     bookTitle = "The Philosopher's Stone";
+    Spell Leviosa = new Spell();
     }
 
-    public void secondBook(){
+    public void book2(){
         enemies = {new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy()};
         bosses = {new Boss("Basilic")};
         bookTitle = "The Chamber Of Secrets";
 
     }
 
-    public void thirdBook(){
+    public void book3(){
         enemies = {new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy()};
         bosses = {new Boss("Troll")};
         bookTitle = "The Prisonner of Azkaban";
 
     }
-    public void fourthBook(){
+    public void book4(){
         enemies = {new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy()};
-        bosses = {new Boss("Voldemort"), new Boss("Pter Pettigrow")};
+        bosses = {new Boss("Voldemort"), new Boss("Peter Pettigrow")};
         bookTitle = "The Goblet of Fire";
     }
-    public void fifthBook(){
+    public void book5(){
         enemies = {new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy()};
         bosses = {new Boss("Dolores Ombrage")};
         bookTitle = "The Order of the Phenix";
     }
 
-    public void sixthBook(){
+    public void book6(){
         enemies = {new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy()};
         bosses = {new Boss("Troll")};
         bookTitle = "The Half-Blood Prince";
     }
 
 
-    public void finalBook(){
+    public void book7(){
         enemies = {new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy()};
         bosses = {new Boss("Voldemort"), new Boss("Bellatrix Lestrange")};
         bookTitle = "The Deathly Hallows";
@@ -71,13 +94,9 @@ public class Book {
 */
 
 
-
-
-
-
-
-
-
+    public int getCurrentBook() {
+        return currentBook;
+    }
 
     public void setCurrentBook(int currentBook) {
         this.currentBook = currentBook;

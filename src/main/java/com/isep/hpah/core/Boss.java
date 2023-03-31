@@ -10,4 +10,6 @@ public class Boss extends AbstractEnemy{
     public String attack(Character target, Spell spellUsed) {
         return null;
     }
+
+
 }

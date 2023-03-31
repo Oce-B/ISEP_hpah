@@ -62,7 +62,7 @@ public class Battle {
                     displaySpells();
                     System.out.print("Enter spell index: ");
                     int spellIndex = scanner.nextInt();
-                    scanner.nextLine(); // consume newline
+                    scanner.nextLine();
                     Spell spell = wizard.getKnownSpells().get(spellIndex);
 
                     System.out.println(wizard.attack(enemies.get(0), spell));

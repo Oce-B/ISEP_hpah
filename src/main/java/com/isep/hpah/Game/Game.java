@@ -44,6 +44,8 @@ public class Game {
         System.out.println("Welcome to House " + player.getHouse().getHouseName() + " , " + player.getCharacterName() + " !");
        player.setPosition(0,0);
         return player;
+
+        //Book.book1();
     }
 
 
