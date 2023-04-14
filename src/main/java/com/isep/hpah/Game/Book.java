@@ -9,9 +9,10 @@ import java.util.List;
 
 public class Book {
 
+    //Inspired by this tutorial: https://www.youtube.com/watch?v=X6jJAZFVDws&list=PLiuAYTl0L-gHgqyWtUKAAhtrTymOLHd28
     private int currentBook;
     private String bookTitle;
-    final public String[] encounters = {"Battle", "Boss", "Shop", "Pet"} ;
+    final public String[] encounters = {"Battle", "Boss", "Shop"} ;
     public Enemy[] enemies;
     public Boss[] bosses;
 
