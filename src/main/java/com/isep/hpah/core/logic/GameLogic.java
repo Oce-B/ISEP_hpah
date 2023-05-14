@@ -1,6 +1,5 @@
 package com.isep.hpah.core.logic;
 
-import com.isep.hpah.Game.Book;
 import com.isep.hpah.Game.Game;
 import com.isep.hpah.core.Boss;
 import com.isep.hpah.core.Enemy;
@@ -8,11 +7,12 @@ import com.isep.hpah.core.Map.Map;
 import com.isep.hpah.core.Spell;
 import com.isep.hpah.core.Wizard;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static com.isep.hpah.core.Map.Movement.*;
+import static com.isep.hpah.core.Map.Movement.getEncounter;
+import static com.isep.hpah.core.Map.Movement.visuallyMove;
+import static com.isep.hpah.gameMecanics.Battle.isBossFight;
 
 public class GameLogic {
 
@@ -84,6 +84,14 @@ public class GameLogic {
         }
     }
 
+    public static void displaySpellList(List<Spell> list) {
+
+        for (int i = 0; i < list.size(); i++) {
+            Object item = list.get(i);
+            System.out.println(i + ": " + item+ list.get(i).getSpellName());
+        }
+    }
+
     public static void gameLoop(Wizard player, Map map, Game game) {
 
 
@@ -108,6 +116,12 @@ public class GameLogic {
             } else {
                 visuallyMove(map, player,  command);
                 getEncounter(player, map, (game.getBook(game.currentBook)).getEnemies(), game.getBook(game.currentBook).getBoss());
+
+                if(isBossFight == true && isGameOver==false){
+                    game.setCurrentBook(game.getCurrentBook()+1);
+                    game.getBook(game.getCurrentBook());
+
+                }
 
             }
         }

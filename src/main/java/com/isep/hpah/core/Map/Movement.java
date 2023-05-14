@@ -57,7 +57,7 @@ public class Movement {
        return  (player.getPosition()[rowOrColumn]+ direction <= MAP_SIZE-1 && player.getPosition()[rowOrColumn]+ direction >= 0);
     }
 
-    public static void getEncounter(Wizard player, Map map /*Game game*/, List<AbstractEnemy> enemies, List<AbstractEnemy> boss) {
+    public static void getEncounter(Wizard player, Map map /*Game game*/, List<AbstractEnemy> enemies, List<Boss> boss) {
 
         int squareColor = map.getSquare(player.getPosition()[0], player.getPosition()[1]);
         System.out.println(squareColor);
@@ -69,8 +69,9 @@ public class Movement {
                 System.out.println("You overcame this year! Time to graduate!!!");
                 break;
             case 6:
-                Battle bossFight = new Battle(player,boss);
-                bossFight.start();
+               // Battle bossFight = new Battle(player,  boss);
+
+              //  bossFight.start();
             case 3 :
                 //
                 System.out.println("Shopping time !");

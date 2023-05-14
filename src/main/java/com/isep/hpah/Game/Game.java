@@ -82,7 +82,7 @@ public int currentBook;
             wand.setSize(rand.nextInt(10,33));
 
 
-            //player.setPet(Pet.getNewPet(Pet.setPetName()));
+            player.setPet(Pet.getNewPet(Pet.setPetName()));
 
 
             player.setWand(wand);
@@ -106,6 +106,22 @@ public int currentBook;
         }
 
 */
+
+    public int getCurrentBook() {
+        return currentBook;
+    }
+
+    public void setCurrentBook(int currentBook) {
+        this.currentBook = currentBook;
+    }
+
+    public AbstractEnemy getEnemmies() {
+        return enemmies;
+    }
+
+    public List<Book> getBookList() {
+        return bookList;
+    }
 
     public Book getBook(int number) {
         return this.bookList.get(number);

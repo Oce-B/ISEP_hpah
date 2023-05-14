@@ -13,11 +13,19 @@ public class Battle {
         private Wizard wizard;
         private List<AbstractEnemy> enemies;
         private boolean wizardTurn;
+        public static boolean isBossFight= false;
 
         public Battle(Wizard wizard, List<AbstractEnemy> enemies) {
             this.wizard = wizard;
             this.enemies = enemies;
             this.wizardTurn = true;
+
+            for(int i=0;i<enemies.size();i++){
+
+                if (enemies.get(i).getClass()== Boss.class){
+                    isBossFight=true;
+                }
+            }
         }
 
         public void start() {
@@ -68,7 +76,7 @@ public class Battle {
 
                 case "potion":
 
-                    if (wizard.getPotions().size() <= 0){
+                    if (wizard.getPotions().size() == 0){
 
                         System.out.println("You have no potions left!");
                     }
@@ -109,6 +117,7 @@ public class Battle {
             } else if (enemies.isEmpty() || enemies.stream().allMatch(Character::isDead)) {
                 System.out.println("Enemies defeated!");
                 System.out.println(wizard.getCharacterName()+" won the battle!");
+
                 return true;
             } else {
                 return false;

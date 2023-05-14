@@ -263,7 +263,7 @@ Voldemort";
         return bookTitle;
     }
 
-    public List<AbstractEnemy> getBoss() {
+    public List<Boss> getBoss() {
         return boss;
     }
 
