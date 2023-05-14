@@ -1,9 +1,7 @@
 package com.isep.hpah.gameMecanics;
 
+import com.isep.hpah.core.*;
 import com.isep.hpah.core.Character;
-import com.isep.hpah.core.Enemy;
-import com.isep.hpah.core.Spell;
-import com.isep.hpah.core.Wizard;
 
 import java.util.List;
 import java.util.Scanner;
@@ -13,10 +11,10 @@ import static com.isep.hpah.core.logic.GameLogic.*;
 public class Battle {
     //Inspired by a ChatGPT prompt
         private Wizard wizard;
-        private List<Enemy> enemies;
+        private List<AbstractEnemy> enemies;
         private boolean wizardTurn;
 
-        public Battle(Wizard wizard, List<Enemy> enemies) {
+        public Battle(Wizard wizard, List<AbstractEnemy> enemies) {
             this.wizard = wizard;
             this.enemies = enemies;
             this.wizardTurn = true;
@@ -59,7 +57,7 @@ public class Battle {
                 case "spell":
                     wizard.displaySpells();
 
-                    int spellIndex = readInt("Enter spell index: ", wizard.getKnownSpells().size() );
+                    int spellIndex = readInt("Enter spell index: ", wizard.getKnownSpells().size());
 
                     Spell spell = wizard.getKnownSpells().get(spellIndex);
 /* TODO (oceane) Add a mean to choose a target */
@@ -69,15 +67,25 @@ public class Battle {
                     break test;
 
                 case "potion":
-                    displayList(wizard.getPotions());
-                    int potionIndex = readInt("Enter potion index: ", wizard.getPotions().size() );
-                    wizard.usePotion(wizard.getPotions().get(potionIndex));
+
+                    if (wizard.getPotions().size() <= 0){
+
+                        System.out.println("You have no potions left!");
+                    }
+                    else {
+                        displayList(wizard.getPotions());
+                        int potionIndex = readInt("Restore health or mana? : ",2);
+                        wizard.usePotion(potionIndex);
+
+                    }
                     break test;
-                case "run":
+                    //Running is useless.
+            /*    case "run":
                     // run logic
-                    System.out.println("You can't run away from your spaghetti code!!!!");
+                    System.out.println("");
                     System.out.println("----------------------------------------------");
-                    break test;
+                    break test;*/
+                // wont exist in real game
                 default:
                     System.out.println("Invalid action!");
                     System.out.println("----------------------------------------------");
@@ -88,8 +96,8 @@ public class Battle {
         private void enemyTurn() {
             System.out.println("Enemy's turn!");
 
-            for (Enemy enemy : enemies) {
-                enemy.attack(wizard, new Spell());
+            for (AbstractEnemy enemy : enemies) {
+                enemy.attack(wizard,new Spell("Punch", 150,"They're trying..."));
             }
         }
 
@@ -110,7 +118,7 @@ public class Battle {
         private void displayCombatInfo() {
             System.out.println(wizard.getCharacterName() + " (Level " + wizard.getLevel() + ") " + wizard.getHealthPoints() + "/" + wizard.getMaxHealthPoints() + " HP " + wizard.getManaPoints() + "/" + wizard.getMaxManaPoints() + " MP");
             System.out.println("vs.");
-            for (Enemy enemy : enemies) {
+            for (AbstractEnemy enemy : enemies) {
                 System.out.println(enemy.getCharacterName() + " (Level " + enemy.getLevel() + ") " + enemy.getHealthPoints() + "/" + enemy.getMaxHealthPoints() + " HP");
             }
             if (wizard.getHealthPoints()<= wizard.getMaxHealthPoints()*0.1){
@@ -124,7 +132,7 @@ public class Battle {
         return wizard;
     }
 
-    public List<Enemy> getEnemies() {
+    public List<AbstractEnemy> getEnemies() {
         return enemies;
     }
 }

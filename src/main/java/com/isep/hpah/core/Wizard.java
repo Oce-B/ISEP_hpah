@@ -1,8 +1,10 @@
 package com.isep.hpah.core;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
+
+import static java.lang.Math.round;
 
 public class Wizard extends Character{
 
@@ -16,30 +18,35 @@ public class Wizard extends Character{
     private List<Spell> knownSpells;
     private List<Potion> potions;
 
-    public Wizard(String characterName, int healthPoints, int maxHealthPoints, int manaPoints, int accuracy, int attackPoints, int defense, int level, int experience) {
+    public Wizard(String characterName, int healthPoints, int maxHealthPoints, int manaPoints, double accuracy, int attackPoints, int defense, int level, int experience) {
         super(characterName , healthPoints, maxHealthPoints, manaPoints, accuracy, attackPoints, defense);
 
 
-
+        this.knownSpells= new ArrayList<>();
+        this.learnNewSpell(new Spell("Wingardium Leviosa", 20, "It makes objects float and fall!"));
+        this.setLevel(1);
         this.experience=0;
     }
 
 
 @Override
     public String attack(Character target, Spell spellUsed){
-        int luck= new Random().ints(0,100).findFirst().getAsInt();
-        System.out.println("luck = "+luck);
-        System.out.println("accuracy= "+this.getAccuracy());
+       // its wasnt working so i asked chatgpt for another solution int luck= new Random().ints(0,100).findFirst().getAsInt();
+
 
         String attackMessage ="Placeholder or something :/";
         int targetHp= target.getHealthPoints();
+ //I asked chatgpt for the random part
+        Random random = new Random();
+        int randomNumber = random.nextInt(101) ;
 
-        if (this.getAccuracy()*100 < luck) {
-           double damage = (this.getAttackPoints()-target.getDefense())*0.05;
+
+        if ( randomNumber <= this.getAccuracy() * 100* getHouse().getAccuracyBonus()) {
+          // double damage = (this.getAttackPoints()-target.getDefense())*0.05;
 
                 //Inspired by Pokemon attack formula
-            // TODO (oceane) find a better formula for damage
-         // double damage= (((2*this.getLevel()/5+2)*this.getAttackPoints()* spellUsed.getSpellLevel())/target.getDefense()/50+2)/255 ;
+            //I changed it bc some mecanics werent in my game (STAB...)
+          int damage= (int) (((2*this.getLevel()*20)*this.getAttackPoints()/target.getDefense()/5+2)* getHouse().getAttackBonus());
            targetHp -= damage;
 
              attackMessage = this.getCharacterName() + " dealt " + damage +" points of damage to " + target.getCharacterName() + "!";
@@ -64,29 +71,46 @@ public class Wizard extends Character{
         for (int i = 0; i < spells.size(); i++) {
             Spell spell = spells.get(i);
             System.out.println(i + ": " + spell.getSpellName() + " (" + spell.getManaCost() + " MP)");
+            System.out.println(spell.getSpellDescription());
         }
     }
 
 
-    public void usePotion(Potion potion){
-        if (this.getHouse().getHouseName().equals("Hufflepuff")){
-
-        } else {
+    public void usePotion( int healthOrMana){
+        //0 for health, 1 for mana
 
 
+        if(healthOrMana ==0) {
+            this.setHealthPoints((int) Math.round(this.getMaxHealthPoints() * 0.15 * this.getHouse().getPotionBonus()));
+            System.out.println("Heath restored!");
+        }else{
+        this.setManaPoints((int) Math.round(this.getMaxManaPoints()*0.15*this.getHouse().getPotionBonus()));
+            System.out.println("Mana restored!");
         }
+
+        List<Potion> newList= (List<Potion>) this.getPotions().remove(0);
+        this.setPotions(newList);
     }
 
 
     public void callPet(){}
 
 
-    public String learnNewSpell(Spell newSpell){
-        knownSpells.add(newSpell);
-        return this.getCharacterName() + " has learned " + newSpell +" !";
+    public void learnNewSpell(Spell newSpell){
+        List<Spell> newSpellList = this.getKnownSpells();
+      //  List<Spell> newSpellList = new ArrayList<>();
+
+     newSpellList.add(newSpell);
+
+        setKnownSpells(newSpellList);
+
     }
     public List<Spell> getKnownSpells() {
         return knownSpells;
+    }
+
+    public void setKnownSpells(List<Spell> knownSpells) {
+        this.knownSpells = knownSpells;
     }
 
 
@@ -111,7 +135,7 @@ public class Wizard extends Character{
         this.wand = wand;
     }
 
-    public void setKnownSpells(List<Spell> knownSpells) {
+    public void setKnownSpells() {
         this.knownSpells = knownSpells;
     }
     public void setPosition( int row, int column) {

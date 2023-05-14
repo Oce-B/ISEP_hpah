@@ -5,23 +5,26 @@ import java.util.List;
 public class Spell extends AbstractSpell{
 
 
-   private int spellLevel;
+    private String spellName;
+
    private Wizard wizard;
 
     private int manaCost;
-    public Spell(){
-        this.spellLevel=1;
+    public Spell(String spellName, int manaCost, String spellDescription){
+        this.manaCost=manaCost;
+        this.spellName=spellName;
+
     }
 
 
-
-
-    public int getSpellLevel() {
-        return spellLevel;
+    @Override
+    public String getSpellName() {
+        return spellName;
     }
 
-    public void setSpellLevel(int spellLevel) {
-        this.spellLevel = spellLevel;
+    @Override
+    public void setSpellName(String spellName) {
+        this.spellName = spellName;
     }
 
     public int getManaCost() {
@@ -34,5 +37,7 @@ public class Spell extends AbstractSpell{
 
 
 
-
 }
+
+
+

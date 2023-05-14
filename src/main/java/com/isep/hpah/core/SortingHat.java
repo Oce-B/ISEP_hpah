@@ -10,10 +10,10 @@ public class SortingHat {
 
 
     public SortingHat() {
-        houses.add(new House("Griffindor", 2, 1, 1, 1));
-        houses.add(new House("Hufflepuff", 1, 1, 2, 1));
-        houses.add( new House("Slytherin", 1, 2, 1, 1));
-        houses.add( new House("Ravenclaw", 1, 1, 1, 2));
+        houses.add(new House("Griffindor", 1.5, 1, 1, 1));
+        houses.add(new House("Hufflepuff", 1, 1, 1.5, 1));
+        houses.add( new House("Slytherin", 1, 1.5, 1, 1));
+        houses.add( new House("Ravenclaw", 1, 1, 1, 1.25));
     }
 
 

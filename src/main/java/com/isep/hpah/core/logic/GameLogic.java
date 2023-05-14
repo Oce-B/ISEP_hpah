@@ -1,6 +1,7 @@
 package com.isep.hpah.core.logic;
 
 import com.isep.hpah.Game.Book;
+import com.isep.hpah.Game.Game;
 import com.isep.hpah.core.Boss;
 import com.isep.hpah.core.Enemy;
 import com.isep.hpah.core.Map.Map;
@@ -83,7 +84,7 @@ public class GameLogic {
         }
     }
 
-    public static void gameLoop(Wizard player, Map map) {
+    public static void gameLoop(Wizard player, Map map, Game game) {
 
 
 
@@ -100,10 +101,13 @@ public class GameLogic {
                     characterInfo(player);
                 } else {
                     isRunning = false;
+                    isGameOver=true;
+
                     break;
                 }
             } else {
                 visuallyMove(map, player,  command);
+                getEncounter(player, map, (game.getBook(game.currentBook)).getEnemies(), game.getBook(game.currentBook).getBoss());
 
             }
         }

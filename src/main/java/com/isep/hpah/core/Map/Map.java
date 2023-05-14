@@ -4,11 +4,15 @@ public class Map {
 
     private static int[][] map;
 
-    private int[] combatCase;
+   /* private int[] combatCase;
+
+    private int[] innCase;
+
+    private int[] regularCase;
     private int[] petCase;
     private int[] bossFightCase;
 
-    private int[] shopCase;
+    private int[] shopCase;*/
 
 
 
@@ -27,6 +31,7 @@ public class Map {
     }
 
     public void printBoard(Map board){
+
         for (int i = 0; i < Map.MAP_SIZE; i++) {
             for (int j = 0; j < Map.MAP_SIZE; j++) {
                 int squareColor = board.getSquare(i, j);
@@ -58,8 +63,9 @@ public class Map {
     }
 
 
-
-
+//TODO (oceane): clear map
+public void clearMap(){
+}
 
     public static int getSquare(int row, int column) {
         return map[row][column];

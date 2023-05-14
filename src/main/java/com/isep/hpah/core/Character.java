@@ -12,7 +12,7 @@ public abstract class Character {
     private int attackPoints;
     private int defense;
 
-    public Character(String characterName, int healthPoints, int maxHealthPoints, int manaPoints, int accuracy, int attackPoints, int defense){
+    public Character(String characterName, int healthPoints, int maxHealthPoints, int manaPoints, double accuracy, int attackPoints, int defense){
         this.characterName=characterName;
         this.healthPoints=healthPoints;
         this.maxHealthPoints=maxHealthPoints;
