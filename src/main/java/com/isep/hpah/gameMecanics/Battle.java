@@ -66,7 +66,7 @@ public class Battle {
 
             switch (command) {
                 case "act":
-                    wizard.act();
+                    //act(wizard);
                    // TODO (oceane) add act (house specific actions....)
                    break test;
                 case "spell":
@@ -177,7 +177,7 @@ public class Battle {
 
         } else{
 
-            actMessage=this.game.getBook(game.getCurrentBook()).get
+           // actMessage=this.game.getBook(game.getCurrentBook()).get
             this.actCount+=1;
         }
         return actMessage;

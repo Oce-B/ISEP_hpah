@@ -19,7 +19,7 @@ public class Book {
    // final private String[] encounters = {"Battle", "Boss", "Shop", "Inn", "Nothing"} ;
     private List<AbstractEnemy> enemies= new ArrayList<AbstractEnemy>();
 
-    private List
+
    private List<Boss> boss = new ArrayList<>();
     private String bookIntroduction;
     private String bookConclusion;
