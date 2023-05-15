@@ -1,5 +1,7 @@
 package com.isep.hpah.core;
 
+import java.util.Random;
+
 public abstract class Character {
 
     private int level;

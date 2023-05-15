@@ -11,28 +11,19 @@ public class Enemy extends AbstractEnemy{
     }
 
     @Override
+    public boolean isDead() {
+        return super.isDead();
+    }
+
+    @Override
     public String attack(Character target, Spell spellUsed) {
         return null;
     }
 
-    public String attack(Character target){
+    @Override
+    public void attack() {
+        super.attack();
+    }
 
-        String attackMessage ="Placeholder or something :/";
-        int targetHp= target.getHealthPoints();
-
-            int damage = (this.getAttackPoints()-target.getDefense());
-
-            //Inspired by Pokemon attack formula
-            // TODO find a better formula for damage
-            // double damage= (((2*this.getLevel()/5+2)*this.getAttackPoints()* spellUsed.getSpellLevel())/target.getDefense()/50+2)/255 ;
-            targetHp -= damage;
-
-            attackMessage = this.getCharacterName() + " dealt " + damage +" points of damage to " + target.getCharacterName() + "!";
-            target.setHealthPoints(targetHp);
-
-
-
-        return attackMessage;
-    };
 
 }

@@ -118,6 +118,7 @@ public class GameLogic {
                 getEncounter(player, map, (game.getBook(game.currentBook)).getEnemies(), game.getBook(game.currentBook).getBoss());
 
                 if(isBossFight == true && isGameOver==false){
+                    System.out.println(game.getBook(game.getCurrentBook()).getBookConclusion());
                     game.setCurrentBook(game.getCurrentBook()+1);
                     game.getBook(game.getCurrentBook());
 

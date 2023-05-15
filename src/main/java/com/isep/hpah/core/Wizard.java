@@ -60,10 +60,6 @@ public class Wizard extends Character{
     };
 
 
-    //TODO (oceane) create act method
-    public String act()
-    {return "";}
-
 
 
     public void displaySpells() {
@@ -77,10 +73,10 @@ public class Wizard extends Character{
 
 
     public void usePotion( int healthOrMana){
-        //0 for health, 1 for mana
+        //1 for health, 2 for mana
 
 
-        if(healthOrMana ==0) {
+        if(healthOrMana ==1) {
             this.setHealthPoints((int) Math.round(this.getMaxHealthPoints() * 0.15 * this.getHouse().getPotionBonus()));
             System.out.println("Heath restored!");
         }else{

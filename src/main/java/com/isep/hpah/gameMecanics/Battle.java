@@ -1,5 +1,6 @@
 package com.isep.hpah.gameMecanics;
 
+import com.isep.hpah.Game.Game;
 import com.isep.hpah.core.*;
 import com.isep.hpah.core.Character;
 
@@ -13,9 +14,15 @@ public class Battle {
         private Wizard wizard;
         private List<AbstractEnemy> enemies;
         private boolean wizardTurn;
+
+        public Game game;
+
+        int actCount=0;
+
         public static boolean isBossFight= false;
 
-        public Battle(Wizard wizard, List<AbstractEnemy> enemies) {
+        public Battle(Game game, Wizard wizard, List<AbstractEnemy> enemies) {
+            this.game =game;
             this.wizard = wizard;
             this.enemies = enemies;
             this.wizardTurn = true;
@@ -65,11 +72,17 @@ public class Battle {
                 case "spell":
                     wizard.displaySpells();
 
-                    int spellIndex = readInt("Enter spell index: ", wizard.getKnownSpells().size());
+                    int spellIndex = readInt("Enter spell index: ", wizard.getKnownSpells().size()+1);
 
                     Spell spell = wizard.getKnownSpells().get(spellIndex);
 /* TODO (oceane) Add a mean to choose a target */
-                    int target= 0;
+                   // int target= 0;
+
+                    int target = readInt("Choose a target", enemies.size()+1);
+
+                    for (AbstractEnemy enemy : enemies) {
+                        System.out.println(target + enemy.getCharacterName() );
+                    }
                     System.out.println(wizard.attack(enemies.get(target), spell));
 
                     break test;
@@ -105,24 +118,33 @@ public class Battle {
             System.out.println("Enemy's turn!");
 
             for (AbstractEnemy enemy : enemies) {
-                enemy.attack(wizard,new Spell("Punch", 150,"They're trying..."));
+                enemy.attack(wizard);
             }
+            System.out.println("The enemies struck you!");
         }
 
-        private boolean isCombatOver() {
-            if (wizard.isDead()) {
-                System.out.println(wizard.getCharacterName() + " is defeated!");
-                boolean gameOver=true;
-                return true;
-            } else if (enemies.isEmpty() || enemies.stream().allMatch(Character::isDead)) {
-                System.out.println("Enemies defeated!");
-                System.out.println(wizard.getCharacterName()+" won the battle!");
-
-                return true;
-            } else {
-                return false;
-            }
+    private boolean isCombatOver() {
+        if (wizard.isDead()) {
+            System.out.println(wizard.getCharacterName() + " is defeated!");
+            return true;
+        } else if (isBossFight && enemies.isEmpty() && bossConditionsMet()) {
+            System.out.println("Boss defeated!");
+            System.out.println(wizard.getCharacterName() + " won the battle!");
+            return true;
+        } else if (!isBossFight && enemies.isEmpty()) {
+            System.out.println("Enemies defeated!");
+            System.out.println(wizard.getCharacterName() + " won the battle!");
+            return true;
+        } else {
+            return false;
         }
+    }
+
+    private boolean bossConditionsMet() {
+        // Implement the specific conditions for defeating the boss
+        // Return true if the conditions are met, false otherwise
+        return false;
+    }
 
         private void displayCombatInfo() {
             System.out.println(wizard.getCharacterName() + " (Level " + wizard.getLevel() + ") " + wizard.getHealthPoints() + "/" + wizard.getMaxHealthPoints() + " HP " + wizard.getManaPoints() + "/" + wizard.getMaxManaPoints() + " MP");
@@ -144,5 +166,22 @@ public class Battle {
     public List<AbstractEnemy> getEnemies() {
         return enemies;
     }
+
+
+    //TODO (oceane) create act method
+    public String act(Wizard wizard)
+    {
+        String actMessage="";
+        if (isBossFight==false){
+            actMessage= "This won't help you for now!";
+
+        } else{
+
+            actMessage=this.game.getBook(game.getCurrentBook()).get
+            this.actCount+=1;
+        }
+        return actMessage;
+    }
+
 }
 

@@ -21,9 +21,51 @@ public int currentBook;
 //TODO change intros
     public Game(Map map) {
 
-        this.bookList.add(new Book(map, "The philosopher's stone", /*TODO change intro*/"Your first year!", "You did it!",  new ArrayList<AbstractEnemy>() {{  add(new Enemy("Other Troll", 500, 500, 150, 50, 150, 200,5));
-                add(new Enemy("Other Troll", 500, 500, 150, 50, 150, 200,5)); }},new ArrayList<Boss>() {{add(new Boss("Troll", 1500, 1500, 250, 60, 200, 300,10));}}, new ArrayList<int[]>(){{ add(new int[]{0, 1}); add(new int[]{1, 2}); add(new int[]{2, 3}); add(new int[]{3, 4});}} ,  new ArrayList<Spell>(){{ add(new Spell("Wingardium Leviosa", 20, "It makes objects float and fall!"));}}
+        this.bookList.add(new Book(map, "The philosopher's stone", /*TODO change intro*/"Your first year!", "You did it!",  new ArrayList<AbstractEnemy>() {{  add(new Enemy("Small Troll", 200, 500, 150, 50, 150, 50,5));
+                add(new Enemy("Small Troll", 200, 500, 150, 50, 150, 50,5)); }},new ArrayList<Boss>() {{add(new Boss("Troll", 400, 1500, 250, 60, 200, 150,10));}}, new ArrayList<int[]>(){{ add(new int[]{0, 1}); add(new int[]{1, 2}); add(new int[]{2, 3}); add(new int[]{3, 4});}} ,  new ArrayList<Spell>(){{ add(new Spell("Wingardium Leviosa", 20, "It makes objects float and fall!"));}}
         ));
+
+        this.bookList.add(new Book(map, "The Chamber Of Secrets", /*TODO change intro*/"Vous êtes face au terrible basilic. Si vous êtes de Griffondor, vous pouvez faire appel à l’épée\n" +
+                "légendaire de Godric Gryﬀindor pour le terrasser. Sinon, il faudra lui arracher un de ses crocs et\n" +
+                "l’utiliser pour détruire le journal de Tom Jedusor.", "You did it!",  new ArrayList<AbstractEnemy>() {{  add(new Enemy("Small Troll", 200, 500, 150, 50, 150, 50,5));
+            add(new Enemy("Small Troll", 200, 500, 150, 50, 150, 50,5)); }},new ArrayList<Boss>() {{add(new Boss("Troll", 400, 1500, 250, 60, 200, 150,10));}}, new ArrayList<int[]>(){{ add(new int[]{0, 1}); add(new int[]{1, 2}); add(new int[]{2, 3}); add(new int[]{3, 4});}} ,  new ArrayList<Spell>(){{ add(new Spell("Wingardium Leviosa", 20, "It makes objects float and fall!"));}}
+        ));
+
+
+        this.bookList.add(new Book(map, "The philosopher's stone", /*TODO change intro*/"Your first year!", "You did it!",  new ArrayList<AbstractEnemy>() {{  add(new Enemy("Small Troll", 200, 500, 150, 50, 150, 50,5));
+            add(new Enemy("Small Troll", 200, 500, 150, 50, 150, 50,5)); }},new ArrayList<Boss>() {{add(new Boss("Troll", 400, 1500, 250, 60, 200, 150,10));}}, new ArrayList<int[]>(){{ add(new int[]{0, 1}); add(new int[]{1, 2}); add(new int[]{2, 3}); add(new int[]{3, 4});}} ,  new ArrayList<Spell>(){{ add(new Spell("Wingardium Leviosa", 20, "It makes objects float and fall!"));}}
+        ));
+
+
+        this.bookList.add(new Book(map, "The philosopher's stone", /*TODO change intro*/"Your first year!", "You did it!",  new ArrayList<AbstractEnemy>() {{  add(new Enemy("Small Troll", 200, 500, 150, 50, 150, 50,5));
+            add(new Enemy("Small Troll", 200, 500, 150, 50, 150, 50,5)); }},new ArrayList<Boss>() {{add(new Boss("Troll", 400, 1500, 250, 60, 200, 150,10));}}, new ArrayList<int[]>(){{ add(new int[]{0, 1}); add(new int[]{1, 2}); add(new int[]{2, 3}); add(new int[]{3, 4});}} ,  new ArrayList<Spell>(){{ add(new Spell("Wingardium Leviosa", 20, "It makes objects float and fall!"));}}
+        ));
+
+
+
+        this.bookList.add(new Book(map, "The philosopher's stone", /*TODO change intro*/"Your first year!", "You did it!",  new ArrayList<AbstractEnemy>() {{  add(new Enemy("Small Troll", 200, 500, 150, 50, 150, 50,5));
+            add(new Enemy("Small Troll", 200, 500, 150, 50, 150, 50,5)); }},new ArrayList<Boss>() {{add(new Boss("Troll", 400, 1500, 250, 60, 200, 150,10));}}, new ArrayList<int[]>(){{ add(new int[]{0, 1}); add(new int[]{1, 2}); add(new int[]{2, 3}); add(new int[]{3, 4});}} ,  new ArrayList<Spell>(){{ add(new Spell("Wingardium Leviosa", 20, "It makes objects float and fall!"));}}
+        ));
+
+
+
+        this.bookList.add(new Book(map, "The philosopher's stone", /*TODO change intro*/"Your first year!", "You did it!",  new ArrayList<AbstractEnemy>() {{  add(new Enemy("Small Troll", 200, 500, 150, 50, 150, 50,5));
+            add(new Enemy("Small Troll", 200, 500, 150, 50, 150, 50,5)); }},new ArrayList<Boss>() {{add(new Boss("Troll", 400, 1500, 250, 60, 200, 150,10));}}, new ArrayList<int[]>(){{ add(new int[]{0, 1}); add(new int[]{1, 2}); add(new int[]{2, 3}); add(new int[]{3, 4});}} ,  new ArrayList<Spell>(){{ add(new Spell("Wingardium Leviosa", 20, "It makes objects float and fall!"));}}
+        ));
+
+
+
+        this.bookList.add(new Book(map, "The philosopher's stone", /*TODO change intro*/"Your first year!", "You did it!",  new ArrayList<AbstractEnemy>() {{  add(new Enemy("Small Troll", 200, 500, 150, 50, 150, 50,5));
+            add(new Enemy("Small Troll", 200, 500, 150, 50, 150, 50,5)); }},new ArrayList<Boss>() {{add(new Boss("Troll", 400, 1500, 250, 60, 200, 150,10));}}, new ArrayList<int[]>(){{ add(new int[]{0, 1}); add(new int[]{1, 2}); add(new int[]{2, 3}); add(new int[]{3, 4});}} ,  new ArrayList<Spell>(){{ add(new Spell("Wingardium Leviosa", 20, "It makes objects float and fall!"));}}
+        ));
+
+
+        this.bookList.add(new Book(map, "The philosopher's stone", /*TODO change intro*/"Your first year!", "You did it!",  new ArrayList<AbstractEnemy>() {{  add(new Enemy("Small Troll", 200, 500, 150, 50, 150, 50,5));
+            add(new Enemy("Small Troll", 200, 500, 150, 50, 150, 50,5)); }},new ArrayList<Boss>() {{add(new Boss("Troll", 400, 1500, 250, 60, 200, 150,10));}}, new ArrayList<int[]>(){{ add(new int[]{0, 1}); add(new int[]{1, 2}); add(new int[]{2, 3}); add(new int[]{3, 4});}} ,  new ArrayList<Spell>(){{ add(new Spell("Wingardium Leviosa", 20, "It makes objects float and fall!"));}}
+        ));
+
+
+
 
     }
 
@@ -87,7 +129,8 @@ public int currentBook;
 
             player.setWand(wand);
 
-
+                System.out.println(getBook(getCurrentBook()).getBookTitle());
+                System.out.println(getBook(getCurrentBook()).getBookIntroduction());
             return player;
 
 
